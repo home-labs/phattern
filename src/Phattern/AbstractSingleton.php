@@ -6,7 +6,10 @@ abstract class AbstractSingleton {
     
     private static $instance;
     
-    private function __construct() { }
+//     através da reflexão, o encapsulamento do método __construct do filho pode ser checado. Talvez isso deva ser feito através de métodos mágicos
+    private function __construct() {
+        echo "\ncalled\n\n";
+    }
     
     private function __clone() { }
     
@@ -17,7 +20,6 @@ abstract class AbstractSingleton {
             // $reflection = new ReflectionClass(get_called_class());
             // self::$instance = $reflection->newInstance(...$arguments);
             
-            // o encapsulamento do método construct do filho pode ser checado para que um erro seja lançado
             self::$instance = new static(...$arguments);
         }
         

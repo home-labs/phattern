@@ -11,10 +11,12 @@ class Mammal extends AbstractSingleton {
     }
     
     function suckles($mammalName) {
-        return "mammalName suckling...";
+        return "$mammalName suckling...";
     }
     
 }
 
-$mammal = Mammal::getInstance();
+$mammal = new Mammal();
+
+// $mammal = Mammal::getInstance();
 echo $mammal->suckles('Felipinga');
