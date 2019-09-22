@@ -6,9 +6,9 @@ use Phattern\AbstractSingleton;
 
 class Mammal extends AbstractSingleton {
     
-    function __construct() {
+//     function __construct() {
         
-    }
+//     }
     
     function suckles($mammalName) {
         return "$mammalName suckling...";
@@ -16,7 +16,7 @@ class Mammal extends AbstractSingleton {
     
 }
 
-$mammal = new Mammal();
+// $mammal = new Mammal();
 
-// $mammal = Mammal::getInstance();
+$mammal = Mammal::getInstance();
 echo $mammal->suckles('Felipinga');
