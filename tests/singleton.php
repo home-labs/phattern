@@ -6,7 +6,7 @@ use Phattern\AbstractSingleton;
 
 class Mammal extends AbstractSingleton {
     
-//     function __construct() {
+//     function __construct($mamalName = '') {
         
 //     }
     
