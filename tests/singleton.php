@@ -4,19 +4,17 @@ require 'autoload.php';
 
 use Phattern\AbstractSingleton;
 
-class Mammal extends AbstractSingleton {
+class SingletonClass extends AbstractSingleton {
     
-//     function __construct($mamalName = '') {
-        
-//     }
+//     function __construct($mamalName = '') { }
     
-    function suckles($mammalName) {
-        return "$mammalName suckling...";
+    function aMethod2Example() {
+        return "I'm a example of a method from a singleton class.";
     }
     
 }
 
-// $mammal = new Mammal();
+// $singleton = new SingletonClass();
 
-$mammal = Mammal::getInstance();
-echo $mammal->suckles('Felipinga');
+$singleton = SingletonClass::getInstance();
+echo $singleton->aMethod2Example() . "\n";
