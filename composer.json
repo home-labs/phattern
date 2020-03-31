@@ -6,7 +6,7 @@
 	"type" : "library",
 	"license" : "MIT",
 	"authors" : [{
-			"name" : "Rafael Laurindo",
+			"name" : "Rafael Pereira",
 			"email" : "rafaelplaurindo@gmail.com"
 		}
 	],
@@ -15,7 +15,9 @@
 	},
 	"autoload" : {
 		"psr-4" : {
-			"Phattern\\": "src/"
+			"Phattern\\": [
+				"src"
+			]
 		}
 	}
 }
