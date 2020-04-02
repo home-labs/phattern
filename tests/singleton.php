@@ -12,7 +12,7 @@ class SingletonClass {
     
     use SingletonTrait;
 
-//     public function __construct(...$arguments) { }
+//     function __construct(...$arguments) { }
     
     function aMethod2Example() {
         return "I'm a example of a method from a singleton class, build with {$this->constructorArguments[0]} argument.";
