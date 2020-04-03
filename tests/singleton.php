@@ -29,7 +29,7 @@ class SingletonClass extends AbstractSingleton {
 // $singleton = new SingletonClass();
 
 $singleton = SingletonClass::getInstance('argument1');
-// $singleton = SingletonClass::getInstance('argument1');
+$singleton = SingletonClass::getInstance('argument1');
 echo $singleton->aMethod2Example() . "\n";
 
 echo "\n" . get_class($singleton) . "\n";
