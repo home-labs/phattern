@@ -2,26 +2,26 @@
 
 namespace Phattern;
 
+use
+    Exception
+;
+
 abstract class AbstractSingleton {
-    
-    private static $instance;
-    
-    protected $constructorArguments;
-    
-    private final function __construct(...$arguments) {
-        $this->constructorArguments = $arguments;
+
+    protected static $instance;
+
+    protected final function __construct() {
+        $childClassName = static::class;
+        
+        if (isset(self::$instance)) {
+            throw  new Exception("Instance of $childClassName such has already been created.");
+        }
     }
     
     private final function __clone() { }
     
     private final function __wakeup() { }
     
-    static function getInstance(...$arguments) {
-        if (!isset(self::$instance)) {
-            self::$instance = new static(...$arguments);
-        }
-        
-        return self::$instance;
-    }
+    abstract static function getInstance(...$arguments);
     
 }

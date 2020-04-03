@@ -3,21 +3,23 @@
 require 'autoload.php';
 
 use 
-    Phattern\AbstractSingleton
+    Phattern\SingletonTrait
 ;
 
-class SingletonClass extends AbstractSingleton {
+class SingletonClass {
+    
+    use SingletonTrait;
 
-//     function __construct(...$arguments) { }
+//     function __construct() { }
 
-    static function getInstance(...$arguments): string {
-        if (!isset(parent::$instance)) {
-            parent::$instance = new self();
+    static function getInstance(...$arguments) {
+        if (!isset(self::$instance)) {
+            self::$instance = new self();
             
 //             print_r($arguments);
         }
 
-        return parent::$instance;
+        return self::$instance;
     }
     
     function aMethod2Example() {
@@ -29,7 +31,6 @@ class SingletonClass extends AbstractSingleton {
 // $singleton = new SingletonClass();
 
 $singleton = SingletonClass::getInstance('argument1');
-// $singleton = SingletonClass::getInstance('argument1');
 echo $singleton->aMethod2Example() . "\n";
 
 echo "\n" . get_class($singleton) . "\n";
